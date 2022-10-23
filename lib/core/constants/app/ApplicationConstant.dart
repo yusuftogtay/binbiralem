@@ -1,4 +1,4 @@
-class ApplicationConstants {
+class ApplicationConstant {
   static const COMPANY_NAME = 'Application';
 
   static const TEST_MODE = true;

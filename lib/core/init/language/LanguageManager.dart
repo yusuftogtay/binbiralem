@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class LocaleManager {
-  static LocaleManager? _instace;
-  static LocaleManager? get instance {
-    _instace ??= LocaleManager._init();
+class LanguageManager {
+  static LanguageManager? _instace;
+  static LanguageManager? get instance {
+    _instace ??= LanguageManager._init();
     return _instace;
   }
 
-  LocaleManager._init();
+  LanguageManager._init();
 
   final enLocale = Locale('en', 'US');
   final trLocale = Locale('tr', 'TR');
 
   List<Locale> get supportedLocales => [enLocale, trLocale];
-
 }
