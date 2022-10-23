@@ -1,7 +1,8 @@
-import 'dart:js';
-
-import 'package:binbiralem/core/constants/navigation/navigation_constants.dart';
 import 'package:flutter/material.dart';
+
+import '../../../view/splash_view/SplashView.dart';
+import '../../constants/navigation/NavigationConstant.dart';
+import '../../../view/helper_views/NotFoundNavigationView.dart';
 
 class NavigationRoute {
   static NavigationRoute? _instace;
@@ -14,11 +15,11 @@ class NavigationRoute {
 
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
-      case NavigationConstants.DEFAULT:
-        return defaultNavigate(SplashWidget(), NavigationConstants.DEFAULT);
+      case NavigationConstant.DEFAULT:
+        return defaultNavigate(SplashView(), NavigationConstant.DEFAULT);
       default:
         return MaterialPageRoute(
-          builder: (context) => NotFoundNavigationWidget(),
+          builder: (context) => NotFoundNavigationView(),
         );
     }
   }

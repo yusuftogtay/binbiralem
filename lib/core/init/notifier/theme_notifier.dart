@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/enum/app_theme_enum.dart';
+import '../../constants/enum/AppThemeEnum.dart';
 import '../theme/light/app_theme_light.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   ThemeData _currentTheme = AppThemeLight.instance!.theme;
 
-  AppThemes _currentThemeEnum = AppThemes.LIGHT;
+  AppThemeEnum _currentThemeEnum = AppThemeEnum.LIGHT;
 
   // Application Theme Enum.
   // The default value is [AppThemes.LIGHT]
-  AppThemes get currentThemeEnum => _currentThemeEnum;
+  AppThemeEnum get currentThemeEnum => _currentThemeEnum;
 
   ThemeData get currentTheme => _currentTheme;
 
-  void changeValue(AppThemes theme) {
-    if (theme == AppThemes.LIGHT)  {
+  void changeValue(AppThemeEnum theme) {
+    if (theme == AppThemeEnum.LIGHT) {
       _currentTheme = ThemeData.light();
     } else {
       _currentTheme = ThemeData.dark();
@@ -24,14 +24,15 @@ class ThemeNotifier extends ChangeNotifier {
   }
 
   // Change your app theme with [currentThemeEnum] value.
-  void changeTheme()  {
-    if (_currentThemeEnum == AppThemes.LIGHT) {
+  void changeTheme() {
+    if (_currentThemeEnum == AppThemeEnum.LIGHT) {
       _currentTheme = ThemeData.dark();
-      _currentThemeEnum = AppThemes.DARK;
+      _currentThemeEnum = AppThemeEnum.DARK;
     } else {
       _currentTheme = AppThemeLight.instance!.theme;
-      _currentThemeEnum = AppThemes.LIGHT;
+      _currentThemeEnum = AppThemeEnum.LIGHT;
     }
   }
+
   notifyListeners();
 }
